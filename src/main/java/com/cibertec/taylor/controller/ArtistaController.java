@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cibertec.taylor.model.Artista;
 import com.cibertec.taylor.service.ArtistaService;
+import com.cibertec.taylor.service.GeneroService;
 
 @Controller
 @RequestMapping("/artistas")
@@ -19,14 +20,18 @@ public class ArtistaController {
 	@Autowired
 	private ArtistaService service;
 	
+	@Autowired
+	private GeneroService generoService;
+	
 	@GetMapping
 	public String listar(Model model) {
 		model.addAttribute("lista", service.listar());
 		return "artistas";
 	}
 	@GetMapping("/nuevo")
-	public String mostrarFormulario(Model model) {
+	public String formulario(Model model) {
 		model.addAttribute("artista", new Artista());
+		model.addAttribute("generos", generoService.listarTodos());
 		return "form";
 	}
 	
@@ -42,6 +47,7 @@ public class ArtistaController {
 	public String editar(@PathVariable Long id, Model model) {
 	    Artista artista = service.buscarPorId(id);
 	    model.addAttribute("artista", artista);
+		model.addAttribute("generos", generoService.listarTodos());
 	    return "form";
 	}
 

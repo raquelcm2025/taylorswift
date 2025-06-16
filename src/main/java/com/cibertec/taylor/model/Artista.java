@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,9 +21,21 @@ public class Artista {
 	private String nacionalidad;
 	private int anioInicio;
 	
+	@ManyToOne
+	@JoinColumn(name ="id_genero")
+	private Genero genero;
+	
 	//constructor vacio
 	
 	public Artista() {}
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
 
 	public Long getId() {
 		return id;

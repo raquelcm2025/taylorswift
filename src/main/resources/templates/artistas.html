@@ -18,19 +18,22 @@
 	<table class="table table-striped table-hover">
 	 	<thead>		
 			<tr >			
-				<th  >ID</th>
-				<th >Nombre</th>
-				<th >Nacionalidad</th>
-				<th >Año de Inicio</th>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Nacionalidad</th>
+				<th>Año de Inicio</th>
+				<th>Género</th>				
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="a : ${lista}">
 						<td th:text="${a.id}"></td>
-						<td  th:text="${a.nombre}"></td>
-						<td  th:text="${a.nacionalidad}"></td>
+						<td th:text="${a.nombre}"></td>
+						<td th:text="${a.nacionalidad}"></td>
 						<td th:text="${a.anioInicio}"></td>
+						<td th:text="${a.genero != null ? a.genero.nombre : 'Sin género'}"></td>
+						
 						<td>
 							<a th:href="@{'/artistas/editar/' + ${a.id}}" class="btn btn-sm btn-warning">Actualizar</a>
 							
