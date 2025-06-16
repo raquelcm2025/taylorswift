@@ -58,12 +58,23 @@ values
 
 
 
---------------------ejecutar spring para actualozar base de datos------
+--------------------ejecutar spring para actualizar base de datos------
 Insert into generos (nombre)
 values
 ('Pop'),
 ('Rock'),
 ('R&B'),
 ('Country');
+-----------------combinando ---artista y genero--------
+INSERT INTO artistas (nombre, nacionalidad, anio_inicio, id_genero) VALUES
+('Taylor Swift', 'Estadounidense', 2006, 1),   -- Pop
+('Ariana Grande', 'Estadounidense', 2008, 1),  -- Pop
+('Beyoncé', 'Estadounidense', 1997, 3),        -- R&B
+('Luis Miguel', 'Mexicano', 1982, 2),          -- Rock
+('Selena', 'Estadounidense', 1980, 4);         -- Country
 
+UPDATE artistas SET id_genero = 3 WHERE id = 5;  -- Lucía → R&B
+UPDATE artistas SET id_genero = 1 WHERE id = 9;  -- Luna → Pop
+UPDATE artistas SET id_genero = 2 WHERE id = 3;  
+UPDATE artistas SET id_genero = 4 WHERE id = 10;  
 
