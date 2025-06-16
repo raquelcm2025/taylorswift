@@ -37,3 +37,21 @@ CREATE TABLE artistas (
   nacionalidad VARCHAR(100),
   anio_inicio INT
 );
+
+
+
+--------------------------
+use taylorswift;
+
+SELECT * FROM artistas;
+
+----Para eliminar columna:
+ALTER TABLE artistas DROP COLUMN ano_inicio;
+
+--insertar valores
+
+Insert into artistas (nombre, nacionalidad, anio_inicio)
+values
+("Luna", "Argentina", 2010),
+("Rachel", "Peruana", 1995),
+("Ricardo", "Mexicano", 1995);
