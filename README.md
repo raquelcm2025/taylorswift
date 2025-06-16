@@ -55,3 +55,15 @@ values
 ("Luna", "Argentina", 2010),
 ("Rachel", "Peruana", 1995),
 ("Ricardo", "Mexicano", 1995);
+
+
+
+--------------------ejecutar spring para actualozar base de datos------
+Insert into generos (nombre)
+values
+('Pop'),
+('Rock'),
+('R&B'),
+('Country');
+
+
