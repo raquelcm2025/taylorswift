@@ -1,3 +1,5 @@
+https://docs.google.com/document/d/1JJ-Hwwpb0Aa-3MRQZFum3HFfQh7J3s_IJp_UFU0Kf_Q/edit?tab=t.0#heading=h.ruqmmlu2h38j
+
 # Proyecto Taylor Swift 🎤
 
 Este proyecto es una aplicación web hecha con **Spring Boot**, que permite **registrar, listar, actualizar y eliminar artistas** como Taylor Swift, entre otros.
